@@ -17,22 +17,22 @@ void imprime(Estudante& estudante) {
 }
 
 int main() {
-    Pessoa p1("Pedro", "123.456.789-01"); // Exercício 1
+    Pessoa p1("Pedro", "123.456.789-01");
     std::cout << p1 << std::endl;
 
-    Estudante e1("Ana", "111.111.111-11", 800001, 3, 3, 7, 8); // Exercício 2
+    Estudante e1("Ana", "111.111.111-11", 800001, 3, 3, 7, 8);
     imprime(e1);
     std::cout << std::endl;
  
-    Estudante e2("Beto", "222.222.222-22", 800002, 6, 5, 7, 8); // Exercício 2
+    Estudante e2("Beto", "222.222.222-22", 800002, 6, 5, 7, 8);
     imprime(e2);
     std::cout << std::endl;
 
-    Estudante e3("Carlos", "333.333.333-33", 800003, 7, 8, 7, 8); // Exercício 2
+    Estudante e3("Carlos", "333.333.333-33", 800003, 7, 8, 7, 8);
     imprime(e3);
     std::cout << std::endl;
 
-    Professor p2("David", "444.444.444-44", "UFSCar"); // Exercício 3
+    Professor p2("David", "444.444.444-44", "UFSCar");
 
     return 0;
 }

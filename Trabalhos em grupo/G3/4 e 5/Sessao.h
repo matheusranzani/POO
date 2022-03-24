@@ -4,7 +4,6 @@
 #include "DataHorario.h"
 #include "Pessoa.h"
 
-// Exercício 5
 namespace poo {
     class Sessao {
     private:

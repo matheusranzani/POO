@@ -1,6 +1,5 @@
 #include "Pessoa.h"
 
-// Exercício 1
 namespace poo {
     Pessoa::Pessoa(std::string nome, std::string CPF) : nome(nome), CPF(CPF) {}
     Pessoa::~Pessoa() {}

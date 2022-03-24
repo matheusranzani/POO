@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-// Exercício 1
 namespace poo {
     class Pessoa {
         private:

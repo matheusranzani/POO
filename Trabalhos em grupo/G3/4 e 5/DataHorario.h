@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-// Exercício 4
 namespace poo {
     class DataHorario {
         private:

@@ -1,6 +1,5 @@
 #include "Sessao.h"
 
-// Exercício 5
 namespace poo {
     Sessao::Sessao(std::string nome_peca, DataHorario& dh) : nome_peca(nome_peca), data_horario(dh) {
         for (int i = 0; i < 15; i++) {
@@ -25,7 +24,7 @@ namespace poo {
                 }
             }
         }
-
+      
         return "cheio";
     }
 
@@ -59,7 +58,6 @@ namespace poo {
 
     bool Sessao::desocupa(std::string s) {
         int linha = s[0] - 'A';
-
         int coluna = std::stoi(s.substr(1)) - 1;
 
         if (!verifica(s)) {
@@ -67,6 +65,7 @@ namespace poo {
         }
 
         pessoa[linha][coluna] = NULL;
+      
         return true;
     }
 

@@ -1,6 +1,5 @@
 #include "Estudante.h"
 
-// Exercício 2
 namespace poo {
     Estudante::Estudante(
         std::string nome, std::string CPF, int RA, double P1, double P2, double T1, double T2) : 

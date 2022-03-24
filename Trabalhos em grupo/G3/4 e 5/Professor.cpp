@@ -1,6 +1,5 @@
 #include "Professor.h"
 
-// Exercício 3
 namespace poo {
     Professor::Professor(std::string nome, std::string CPF, std::string universidade) : 
     Pessoa(nome, CPF), 

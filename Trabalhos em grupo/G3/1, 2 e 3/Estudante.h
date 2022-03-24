@@ -3,7 +3,6 @@
 
 #include "Pessoa.h"
 
-// Exercício 2
 namespace poo {
     class Estudante : public Pessoa {
         private:
