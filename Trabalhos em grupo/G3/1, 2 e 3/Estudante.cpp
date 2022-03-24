@@ -41,17 +41,12 @@ namespace poo {
         return sac() ? SAC : 0;
     }
 
-    std::ostream& operator<<(std::ostream& saida, Estudante e) {
+    std::ostream& operator<<(std::ostream& saida, Estudante& e) {
         Pessoa p(e.getNome(), e.getCPF());
         operator<<(saida, p);
         
-        // Só nome, CPF e média?
-        saida << "RA: " << e.getRa() << std::endl
-        << "Media: " << e.media() << std::endl
-        << "Aprovado: " << e.aprovado() << std::endl
-        << "SAC: " << e.sac() << std::endl
-        << "Nota SAC: " << e.notaSAC() << std::endl;
-        
+        saida << "Media Final: " << e.media() << std::endl;
+    
         return saida;
     }
 }

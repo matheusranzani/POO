@@ -12,7 +12,7 @@ namespace poo {
         return this->universidade;
     }
 
-    std::ostream& operator<<(std::ostream& saida, Professor prof) {
+    std::ostream& operator<<(std::ostream& saida, Professor& prof) {
         Pessoa p(prof.getNome(), prof.getCPF());
         operator<<(saida, p);
 

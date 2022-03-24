@@ -21,7 +21,7 @@ namespace poo {
             bool sac();
             double notaSAC();
 
-            friend std::ostream& operator<<(std::ostream&, Estudante);
+            friend std::ostream& operator<<(std::ostream&, Estudante&);
     };
 }
 

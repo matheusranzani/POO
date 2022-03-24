@@ -16,7 +16,7 @@ namespace poo {
             std::string getNome() const;
             std::string getCPF() const;
 
-            friend std::ostream& operator<<(std::ostream&, Pessoa);
+            friend std::ostream& operator<<(std::ostream&, Pessoa&);
     };
 }
 

@@ -15,7 +15,7 @@ namespace poo {
 
             std::string getUniversidade() const;
 
-            friend std::ostream& operator<<(std::ostream&, Professor);
+            friend std::ostream& operator<<(std::ostream&, Professor&);
     };
 }
 
