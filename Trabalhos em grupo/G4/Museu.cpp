@@ -19,8 +19,8 @@ namespace catalogo {
 
     bool Museu::adicionaObra(ObraDeArte* obra) {
         for (int i = 0; i < obras.size(); i++) {
-            if (obras.at(i)->getTitulo() == obra->getTitulo()) {
-                return false;
+            if (obras.at(i)->getTitulo() == obra->getTitulo()) { 
+                return false; // Se já existe a obra no vetor retorna falso
             }
         }
 
@@ -48,13 +48,15 @@ namespace catalogo {
             }
         }
 
-        return NULL;
+        return NULL; // Se não encotrar a obra retorna null
     }
 
+    // Retorna o total de obras (pinturas e esculturas)
     int Museu::qtdeObras() const {
         return obras.size();
     }
 
+    // Retorna o total de pinturas
     int Museu::qtdePinturas() const {
         int qtde_pinturas = 0;
         
@@ -67,6 +69,7 @@ namespace catalogo {
         return qtde_pinturas;
     }
 
+    // Retorna o total de esculturas
     int Museu::qtdeEsculturas() const {
         int qtde_esculturas = 0;
         
@@ -79,25 +82,40 @@ namespace catalogo {
         return qtde_esculturas;
     }
 
+    // Função que retorna o vetor obras ordenado pelo ano + título
+    std::vector<ObraDeArte*> ordenaObras(std::vector<ObraDeArte*> obras) {
+        std::sort(obras.begin(), obras.end(), [](ObraDeArte* o1, ObraDeArte* o2) {
+            if (o1->getAno() != o2->getAno()) { // Se o ano for diferente, a obra com menor ano aparece antes
+                return o1->getAno() < o2->getAno();
+            } else { // Se os anos forem iguais, ordena por ordem alfabética usando o título
+                return o1->getTitulo() < o2->getTitulo();
+            }
+        });
+
+        return obras;
+    }
+
     void Museu::imprime(int categoria) const {
+        std::vector<ObraDeArte*> obras_ordenadas = ordenaObras(obras);
+
         if (categoria == 0) { // 0 = Todos
-            for (int i = 0; i < obras.size(); i++) {
-                obras.at(i)->imprimeFicha();
+            for (int i = 0; i < obras_ordenadas.size(); i++) {
+                obras_ordenadas.at(i)->imprimeFicha();
             }
         }
 
         if (categoria == 1) { // 1 = Pinturas
             for (int i = 0; i < obras.size(); i++) {
-                if (obras.at(i)->getCategoria() == categoria) {
-                    obras.at(i)->imprimeFicha();
+                if (obras_ordenadas.at(i)->getCategoria() == categoria) {
+                    obras_ordenadas.at(i)->imprimeFicha();
                 }
             }
         } 
         
         if (categoria == 2) { // 2 = Esculturas
             for (int i = 0; i < obras.size(); i++) {
-                if (obras.at(i)->getCategoria() == categoria) {
-                    obras.at(i)->imprimeFicha();
+                if (obras_ordenadas.at(i)->getCategoria() == categoria) {
+                    obras_ordenadas.at(i)->imprimeFicha();
                 }
             }
         }

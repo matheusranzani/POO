@@ -4,7 +4,8 @@
 #include "ObraDeArte.h"
 
 #include <iostream>
-#include <vector>
+#include <vector> // Estrutura da API STL C++
+#include <algorithm> // Para ordenação das obras (std::sort)
 
 namespace catalogo {
     class Museu {
@@ -24,7 +25,7 @@ namespace catalogo {
             // Getter
             std::string getNome() const;
 
-            // Métodos para manipular as obras
+            // Métodos para a manipulação das obras
             bool adicionaObra(ObraDeArte*);
             bool removeObra(std::string);
             ObraDeArte* obtemObra(std::string);

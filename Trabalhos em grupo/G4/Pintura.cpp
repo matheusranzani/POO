@@ -23,9 +23,10 @@ namespace catalogo {
     }
 
     void Pintura::imprimeFicha() const {
-        std::cout << "Categoria: " << getCategoria() << " (Pintura)" << std::endl;
+        std::cout << "Categoria: Pintura" << std::endl;
         std::cout << "Titulo: " << getTitulo() << std::endl;
         std::cout << "Artista: " << getArtista() << std::endl;
+        std::cout << "Material: " << getMaterial() << std::endl;
         std::cout << "Ano: " << getAno() << std::endl;
         std::cout << "Tipo: " << getTipo() << std::endl;
         std::cout << std::endl;

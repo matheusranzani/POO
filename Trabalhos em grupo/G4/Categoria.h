@@ -5,4 +5,4 @@ const int TODOS = 0;
 const int PINTURA = 1;
 const int ESCULTURA = 2;
 
-#endif
+#endif /* CATEGORIA_H */
