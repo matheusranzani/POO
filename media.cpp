@@ -15,6 +15,6 @@ int main() {
     float media = (Q1 + Q2 + 2 * G1 + 2 * G2 + 2 * G3 + 2 * G4 + 3 * P1 + 3 * P2) / 16;
 
     std::cout << "Media = " << media << std::endl;
-
+    
     return 0;
 }

@@ -1,0 +1,63 @@
+===============================================================
+Grupo 07 [89,00 de 100,00]
+
+Jorge Luiz Medeiros Pires
+Matheus Goulart Ranzani
+Rodrigo Pavão Coffani Nunes
+Vinícius Borges de Lima
+Vinícius Matheus Romualdo Santos
+===============================================================
+
+Classe Pessoa [10,00 de 10,00]
+
+* Implementação OK.
+
+-------------------------------------------------------------
+
+Classe Estudante [14,00 de 15,00]
+ 
+* Os métodos sac() e aprovado() poderiam ser mais eficientes (não há necessidade do comando ternário).
+No caso da atividade entregue, o valor retornado é true se a condição é true e falso, caso contrário. Então basta retornar a condição.
+
+por exemplo:
+
+bool Estudante::aprovado() {
+  double MF = media();
+      
+  return MF >= 6.0;
+}
+
+* O operador "<<" da classe Estudante deveria invocar o operador "<<" da classe Pessoa -- assim não precisaria replicar o mesmo código (impressão de nome e CPF) em duas classes. A implementação que foi entregue na atividade está funcional mas é mais custosa (há a necessidade de criar um objeto da classe Pessoa manualmente).
+Porém o mais adequado é fazer um cast do objeto Estudante para a classe Pessoa e invocar o operador "<<" (ver exemplo abaixo).
+
+    ostream &operator<<(ostream &os, const Estudante &obj) { 
+        os << ((Pessoa) obj);
+        os << fixed << setprecision(2);
+        os << "Média: " << obj.media() << endl;
+        return os;
+    }
+
+-------------------------------------------------------------
+
+Classe Professor [10,00 de 10,00]
+
+* O operador "<<" da classe Professor deveria invocar o operador "<<" da classe Pessoa -- assim não precisaria replicar o mesmo código (impressão de nome e CPF) em duas classes. A implementação que foi entregue na atividade está funcional mas é mais custosa (há a necessidade de criar um objeto da classe Pessoa manualmente).
+Porém o mais adequado é fazer um cast do objeto Professor para a classe Pessoa e invocar o operador "<<" (ver discussão na classe Estudante).
+
+-------------------------------------------------------------
+
+Classe DataHorario [18,00 de 25,00]
+
+* Validação no construtor não realizada (conforme prevista no enunciado).
+
+* O operador "<" e está confuso. Não é uma boa prática termos "tantos" comandos de "if (condicao) return" em um mesmo método. 
+São 6 "if (condicao) return true" + 1 return "valor fixo (false)" que nunca será executado.
+As boas práticas nos dizem em termos apenas um comando de return por método.
+
+-------------------------------------------------------------
+
+Classe Sessao [37,00 de 40,00]
+
+* Apesar de não explícito no enunciado, há justificativa para a existência do atributo "vagas" que armazena quantas vagas disponíveis na sessão. O cálculo das vagas disponíveis (laço for), a cada chamada de método, pode gerar um processamento excessivo. Dessa forma, uma solução mais adequada seria armazenar as vagas disponíveis em um atributo (o método vagas() retornaria o valor desse atributo). Esse atributo seria inicializado com o valor de 210 e seria decrementado/incrementado nos métodos ocupa/desocupa.
+
+* O operador "<<" da classe Sessao deveria invocar o operador "<<" da classe Pessoa (ela já foi implementada e imprime as informações da Pessoa [Nome,CPF]).
