@@ -82,8 +82,8 @@ namespace catalogo {
         return qtde_esculturas;
     }
 
-    // Função que retorna o vetor obras ordenado pelo ano + título
-    std::vector<ObraDeArte*> ordenaObras(std::vector<ObraDeArte*> obras) {
+    void Museu::imprime(int categoria) {
+        // Ordena o vetor obras pelo ano + título
         std::sort(obras.begin(), obras.end(), [](ObraDeArte* o1, ObraDeArte* o2) {
             if (o1->getAno() != o2->getAno()) { // Se o ano for diferente, a obra com menor ano aparece antes
                 return o1->getAno() < o2->getAno();
@@ -92,30 +92,24 @@ namespace catalogo {
             }
         });
 
-        return obras;
-    }
-
-    void Museu::imprime(int categoria) const {
-        std::vector<ObraDeArte*> obras_ordenadas = ordenaObras(obras);
-
         if (categoria == 0) { // 0 = Todos
-            for (int i = 0; i < obras_ordenadas.size(); i++) {
-                obras_ordenadas.at(i)->imprimeFicha();
+            for (int i = 0; i < obras.size(); i++) {
+                obras.at(i)->imprimeFicha();
             }
         }
 
         if (categoria == 1) { // 1 = Pinturas
             for (int i = 0; i < obras.size(); i++) {
-                if (obras_ordenadas.at(i)->getCategoria() == categoria) {
-                    obras_ordenadas.at(i)->imprimeFicha();
+                if (obras.at(i)->getCategoria() == categoria) {
+                    obras.at(i)->imprimeFicha();
                 }
             }
         } 
         
         if (categoria == 2) { // 2 = Esculturas
             for (int i = 0; i < obras.size(); i++) {
-                if (obras_ordenadas.at(i)->getCategoria() == categoria) {
-                    obras_ordenadas.at(i)->imprimeFicha();
+                if (obras.at(i)->getCategoria() == categoria) {
+                    obras.at(i)->imprimeFicha();
                 }
             }
         }

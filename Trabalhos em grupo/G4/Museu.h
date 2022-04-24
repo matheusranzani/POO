@@ -34,7 +34,7 @@ namespace catalogo {
             int qtdeEsculturas() const;
 
             // Impressão dos obejtos
-            void imprime(int) const;
+            void imprime(int);
     };
 }
 
