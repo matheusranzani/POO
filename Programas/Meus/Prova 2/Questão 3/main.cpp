@@ -25,21 +25,21 @@ double porcentagemAlunos(std::vector<Usuario*> usuarios) {
 }
 
 double porcentagemProfessores(std::vector<Usuario*> usuarios) {
-    int numeroClientes = 0;
+    int numeroAlunos = 0;
     int numeroProfessores = 0;
 
     for (int i = 0; i < usuarios.size(); i++) {
         if (usuarios.at(i)->getTipo() == PROFESSOR) {
             numeroProfessores++;
         } else {
-            numeroClientes++;
+            numeroAlunos++;
         }
     }
 
-    int totalUsuarios = numeroClientes + numeroProfessores;
-    double porcentagemFornecedor = ((double) numeroProfessores / totalUsuarios) * 100; 
+    int totalUsuarios = numeroAlunos + numeroProfessores;
+    double porcentagemProfessores = ((double) numeroProfessores / totalUsuarios) * 100; 
 
-    return porcentagemFornecedor;
+    return porcentagemProfessores;
 }
 
 
